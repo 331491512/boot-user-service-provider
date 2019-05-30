@@ -1,11 +1,16 @@
-package com.atguigu.gmall.service.impl;
+package com.atguigu.gmall.bootuserserviceprovider.service.impl;
 
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.dubbo.config.annotation.Service;
+import org.springframework.stereotype.Component;
+
 import com.atguigu.gmall.bean.UserAddress;
 import com.atguigu.gmall.service.UserService;
 
+@Service // 注意：暴露服务
+@Component
 public class UserServiceImpl implements UserService {
 
     /**
@@ -14,6 +19,8 @@ public class UserServiceImpl implements UserService {
      * @param userId 无意义
      */
     public List<UserAddress> getUserAddressList(String userId) {
+
+        System.out.println("getUserAddressList方法");
 
         UserAddress u1 = new UserAddress();
         u1.setUserId("1");
